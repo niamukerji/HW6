@@ -21,32 +21,42 @@ def main():
     # Set page configuration and add a futuristic cyberpunk theme
     st.set_page_config(page_title="CyberTweet Analyzer", layout="wide", initial_sidebar_state="expanded")
     st.markdown(
-        """
-        <style>
-        body {
-            background-color: #0f0f0f;
-            color: #f8f8f2;
-            font-family: 'Orbitron', sans-serif;
-        }
-        .stButton>button {
-            background-color: #ff79c6;
-            color: #0f0f0f;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .stButton>button:hover {
-            background-color: #bd93f9;
-        }
-        .neon-text {
-            color: #50fa7b;
-            text-shadow: 0 0 5px #50fa7b, 0 0 10px #50fa7b, 0 0 20px #ff79c6, 0 0 30px #ff79c6, 0 0 40px #ff79c6;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    """
+    <style>
+    body {
+        background-color: #0f0f0f;
+        color: #f8f8f2;
+    }
+    .stApp {
+        background-color: #0f0f0f;
+        color: #f8f8f2;
+        font-family: 'Orbitron', sans-serif;
+    }
+    .stTextInput, .stButton>button, .stDataFrame {
+        background-color: #1e1e1e;
+        color: #f8f8f2;
+    }
+    .stButton>button {
+        background-color: #ff79c6;
+        color: black;
+    }
+    .stButton>button:hover {
+        background-color: #bd93f9;
+        color: white;
+    }
+    .css-1aumxhk {
+        background-color: #1e1e1e;
+        color: white;
+    }
+    .neon-text {
+        color: #50fa7b;
+        text-shadow: 0 0 5px #50fa7b, 0 0 10px #50fa7b, 0 0 20px #ff79c6, 0 0 30px #ff79c6;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
     
     # Sidebar navigation
     page = st.sidebar.radio("Navigation", ["Homepage", "Keyword Engagement", "Persona Tweet"])
