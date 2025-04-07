@@ -1,0 +1,10 @@
+streamlit
+pandas
+plotly
+python-dotenv
+openai==1.66.3
+requests
+beautifulsoup4
+altair
+python-dotenv
+scipy
