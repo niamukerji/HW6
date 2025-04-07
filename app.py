@@ -51,7 +51,7 @@ def main():
     # Sidebar navigation
     page = st.sidebar.radio("Navigation", ["Homepage", "Keyword Engagement", "Persona Tweet"])
     
-    # Load the OpenAI API key from an environment variable (do not hardcode your key)
+    # Load the OpenAI API key from an environment variable
     openai_api_key = os.getenv("OPENAI_API_KEY")
     if not openai_api_key:
         st.error("OpenAI API key not found. Please set the OPENAI_API_KEY environment variable.")
@@ -60,7 +60,7 @@ def main():
     
     # Homepage: Upload CSV and analyze tweet engagement
     if page == "Homepage":
-        st.title('<span class="neon-text">CyberTweet Analyzer</span>', unsafe_allow_html=True)
+        st.markdown('<h1 class="neon-text">CyberTweet Analyzer</h1>', unsafe_allow_html=True)
         st.header("Upload your tweet CSV")
         uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
         if uploaded_file:
@@ -85,7 +85,7 @@ def main():
 
     # Keyword Engagement: Analyze keywords' impact on engagement
     elif page == "Keyword Engagement":
-        st.title('<span class="neon-text">CyberTweet Analyzer</span>', unsafe_allow_html=True)
+        st.markdown('<h1 class="neon-text">CyberTweet Analyzer</h1>', unsafe_allow_html=True)
         st.header("Keyword Engagement")
         if "df" not in st.session_state:
             st.warning("Please upload a CSV file on the Homepage first.")
@@ -116,7 +116,7 @@ def main():
     
     # Persona Tweet: Generate a new tweet in the user's style
     elif page == "Persona Tweet":
-        st.title('<span class="neon-text">CyberTweet Analyzer</span>', unsafe_allow_html=True)
+        st.markdown('<h1 class="neon-text">CyberTweet Analyzer</h1>', unsafe_allow_html=True)
         st.header("Persona Tweet")
         if "df" not in st.session_state or "engagement_analysis" not in st.session_state:
             st.warning("Please complete the analysis on the Homepage first.")
